@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - SIH Certificates</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            color: #202124;
+        }
+        .bg-icons {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .bg-icons svg {
+            position: absolute;
+            fill: #e0e5eb;
+        }
+        .icon-1 { top: 10%; left: 10%; width: 150px; transform: rotate(15deg); }
+        .icon-2 { top: 65%; left: 5%; width: 180px; transform: rotate(-20deg); }
+        .icon-3 { top: 15%; right: 10%; width: 160px; transform: rotate(-10deg); }
+        .icon-4 { top: 70%; right: 5%; width: 200px; transform: rotate(25deg); }
+        .icon-5 { top: 85%; left: 45%; width: 140px; transform: rotate(5deg); }
+        .icon-6 { top: -5%; left: 45%; width: 120px; transform: rotate(-15deg); }
+        .header-bar {
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logos {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .logos img {
+            max-height: 40px;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #5f6368;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 24px;
+            transition: background-color 0.2s;
+        }
+        .back-btn:hover {
+            background-color: #f1f3f4;
+            color: #202124;
+        }
+        .back-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 24px;
+            color: #3c4043;
+        }
+        .card {
+            background: #ffffff;
+            border: 1px solid #dadce0;
+            border-radius: 8px;
+            padding: 0;
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+        .card-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid #dadce0;
+            background-color: #fff;
+        }
+        .card-header h2 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 500;
+            color: #202124;
+        }
+        .team-id-badge {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 13px;
+            background-color: #e8f0fe;
+            color: #1967d2;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+        .member-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .member-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            border-bottom: 1px solid #f1f3f4;
+        }
+        .member-item:last-child {
+            border-bottom: none;
+        }
+        .member-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .member-name {
+            font-size: 15px;
+            color: #202124;
+            font-weight: 500;
+        }
+        .member-role {
+            font-size: 13px;
+            color: #5f6368;
+        }
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #1a73e8;
+            background: none;
+            border: 1px solid transparent;
+            text-decoration: none;
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        .download-btn:hover {
+            background-color: #f8f9fa;
+        }
+        .download-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-icons">
+        <!-- Code -->
+        <svg class="icon-1" viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+        <!-- Microchip -->
+        <svg class="icon-2" viewBox="0 0 24 24"><path d="M21 11V9h-2V7c0-1.1-.9-2-2-2h-2V3h-2v2h-2V3H9v2H7c-1.1 0-2 .9-2 2v2H3v2h2v2H3v2h2v2c0 1.1.9 2 2 2h2v2h2v-2h2v2h2v-2h2c1.1 0 2-.9 2-2v-2h2v-2h-2v-2h2zm-4 6H7V7h10v10zm-2-8H9v6h6V9z"/></svg>
+        <!-- Settings/Gear -->
+        <svg class="icon-3" viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.56-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.73 9.05c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .43-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+        <!-- Device Hub/Network -->
+        <svg class="icon-4" viewBox="0 0 24 24"><path d="M17 16l-4-4V8.82C14.16 8.4 15 7.3 15 6c0-1.66-1.34-3-3-3S9 4.34 9 6c0 1.3.84 2.4 2 2.82V12l-4 4H3v5h5v-3.05l4-4.2 4 4.2V21h5v-5h-4z"/></svg>
+        <!-- Terminal -->
+        <svg class="icon-5" viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm0 14H4V8h16v10zm-2-1h-6v-2h6v2zM7.5 17l-1.41-1.41L8.67 13l-2.59-2.59L7.5 9l4 4-4 4z"/></svg>
+        <!-- Wifi/Signal -->
+        <svg class="icon-6" viewBox="0 0 24 24"><path d="M12.01 21.49L23.64 7c-3.45-3.19-8.84-5.12-11.62-5.12S3.83 3.81.38 7l11.63 14.49zm0-2L2.74 8C5.6 5.56 9.17 4.5 12.01 4.5s6.41 1.06 9.27 3.5l-9.27 11.49zM12 18.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/></svg>
+    </div>
+    <div class="header-bar">
+        <a href="/" class="back-btn">
+            <svg viewBox="0 0 24 24">
+                <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+            </svg>
+            Search
+        </a>
+        <div class="logos">
+            <img src="{{ url_for('static', filename='college logo.svg') }}" alt="College">
+            <img src="{{ url_for('static', filename='SIH LOGO.png') }}" alt="SIH">
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Results for "{{ query }}"</h1>
+        
+        {% for team in teams %}
+        <div class="card">
+            <div class="card-header">
+                <h2>{{ team.name }}</h2>
+                <div class="team-id-badge">ID: {{ team.id }}</div>
+            </div>
+            <ul class="member-list">
+                {% for member in team.members %}
+                <li class="member-item">
+                    <div class="member-info">
+                        <span class="member-name">{{ member.name }}</span>
+                        <span class="member-role">{{ member.role.replace('_', ' ').title() }}</span>
+                    </div>
+                    <a href="/download/{{ team.id }}/{{ member.name }}" class="download-btn" download>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                        </svg>
+                        Download
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% else %}
+        <div class="card" style="padding: 40px; text-align: center;">
+            <p style="color: #5f6368; font-size: 16px;">No teams found for your search.</p>
+        </div>
+        {% endfor %}
+
+        <div style="margin-top: 40px; display: flex; justify-content: center; align-items: center; gap: 8px;">
+            <span style="color: #5f6368; font-size: 13px; font-weight: 500;">Powered by</span>
+            <a href="https://code-host.online" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 4px;">
+                <svg viewBox="0 0 1024 1024" style="width: 20px; height: 20px;" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-width="80" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="512,520 820,730 512,920 204,730" stroke="#4D96FF" fill="#ffffff"></polygon>
+                    <polygon points="512,320 820,530 512,720 204,530" stroke="#4D96FF" fill="#ffffff"></polygon>
+                    <polygon points="512,120 820,320 512,520 204,320" stroke="#4D96FF" fill="#ffffff"></polygon>
+                </svg>
+                <span style="font-size: 16px; font-weight: 900; letter-spacing: -0.5px; color: #0F172A;">Code<span style="color: #4D96FF;">Host</span></span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

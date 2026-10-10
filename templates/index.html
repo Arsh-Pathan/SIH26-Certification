@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIH Certificate Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #202124;
+        }
+        .bg-icons {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .bg-icons svg {
+            position: absolute;
+            fill: #e0e5eb;
+        }
+        .icon-1 { top: 10%; left: 10%; width: 150px; transform: rotate(15deg); }
+        .icon-2 { top: 65%; left: 5%; width: 180px; transform: rotate(-20deg); }
+        .icon-3 { top: 15%; right: 10%; width: 160px; transform: rotate(-10deg); }
+        .icon-4 { top: 70%; right: 5%; width: 200px; transform: rotate(25deg); }
+        .icon-5 { top: 85%; left: 45%; width: 140px; transform: rotate(5deg); }
+        .icon-6 { top: -5%; left: 45%; width: 120px; transform: rotate(-15deg); }
+        .main-container {
+            background: #ffffff;
+            padding: 48px 40px;
+            border-radius: 8px;
+            border: 1px solid #dadce0;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .logos img {
+            max-height: 60px;
+            max-width: 120px;
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: 500;
+            margin: 0 0 12px 0;
+        }
+        p {
+            font-size: 15px;
+            color: #5f6368;
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .input-group {
+            width: 100%;
+            margin-bottom: 24px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 13px 16px;
+            border: 1px solid #dadce0;
+            border-radius: 24px;
+            font-size: 16px;
+            outline: none;
+            box-sizing: border-box;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        input[type="text"]:focus {
+            border-color: #1a73e8;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        button {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        button:hover {
+            background-color: #1b66c9;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+        .error {
+            color: #d93025;
+            font-size: 14px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .error svg {
+            width: 16px;
+            height: 16px;
+            fill: #d93025;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-icons">
+        <!-- Code -->
+        <svg class="icon-1" viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+        <!-- Microchip -->
+        <svg class="icon-2" viewBox="0 0 24 24"><path d="M21 11V9h-2V7c0-1.1-.9-2-2-2h-2V3h-2v2h-2V3H9v2H7c-1.1 0-2 .9-2 2v2H3v2h2v2H3v2h2v2c0 1.1.9 2 2 2h2v2h2v-2h2v2h2v-2h2c1.1 0 2-.9 2-2v-2h2v-2h-2v-2h2zm-4 6H7V7h10v10zm-2-8H9v6h6V9z"/></svg>
+        <!-- Settings/Gear -->
+        <svg class="icon-3" viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.56-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.73 9.05c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .43-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+        <!-- Device Hub/Network -->
+        <svg class="icon-4" viewBox="0 0 24 24"><path d="M17 16l-4-4V8.82C14.16 8.4 15 7.3 15 6c0-1.66-1.34-3-3-3S9 4.34 9 6c0 1.3.84 2.4 2 2.82V12l-4 4H3v5h5v-3.05l4-4.2 4 4.2V21h5v-5h-4z"/></svg>
+        <!-- Terminal -->
+        <svg class="icon-5" viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm0 14H4V8h16v10zm-2-1h-6v-2h6v2zM7.5 17l-1.41-1.41L8.67 13l-2.59-2.59L7.5 9l4 4-4 4z"/></svg>
+        <!-- Wifi/Signal -->
+        <svg class="icon-6" viewBox="0 0 24 24"><path d="M12.01 21.49L23.64 7c-3.45-3.19-8.84-5.12-11.62-5.12S3.83 3.81.38 7l11.63 14.49zm0-2L2.74 8C5.6 5.56 9.17 4.5 12.01 4.5s6.41 1.06 9.27 3.5l-9.27 11.49zM12 18.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/></svg>
+    </div>
+    <div class="main-container">
+        <div class="logos">
+            <img src="{{ url_for('static', filename='college logo.svg') }}" alt="College Logo">
+            <img src="{{ url_for('static', filename='SIH LOGO.png') }}" alt="SIH Logo">
+        </div>
+        
+        <h1>Download Your Certificate</h1>
+        <p>Enter your assigned Team ID or Team Name to view and download your official participation records.</p>
+        
+        {% if error %}
+            <div class="error">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                </svg>
+                {{ error }}
+            </div>
+        {% endif %}
+        
+        <form action="/search" method="GET">
+            <div class="input-group">
+                <input type="text" name="query" placeholder="Search by Team Name or ID..." required autofocus>
+            </div>
+            <button type="submit">Search</button>
+        </form>
+
+        <div style="margin-top: 40px; display: flex; justify-content: center; align-items: center; gap: 8px;">
+            <span style="color: #5f6368; font-size: 13px; font-weight: 500;">Powered by</span>
+            <a href="https://code-host.online" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 4px;">
+                <svg viewBox="0 0 1024 1024" style="width: 20px; height: 20px;" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-width="80" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="512,520 820,730 512,920 204,730" stroke="#4D96FF" fill="#ffffff"></polygon>
+                    <polygon points="512,320 820,530 512,720 204,530" stroke="#4D96FF" fill="#ffffff"></polygon>
+                    <polygon points="512,120 820,320 512,520 204,320" stroke="#4D96FF" fill="#ffffff"></polygon>
+                </svg>
+                <span style="font-size: 16px; font-weight: 900; letter-spacing: -0.5px; color: #0F172A;">Code<span style="color: #4D96FF;">Host</span></span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
